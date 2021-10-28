@@ -1,2 +1,0 @@
-# utxo-oracle
-UTXO oracle
