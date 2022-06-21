@@ -10,7 +10,7 @@ fn main_result() -> Result<(), Error> {
     let url = env::var("RPC_URL").expect("RPC_URL");
     let user = "user".to_string();
     let pass = env::var("RPC_PASS").expect("RPC_PASS");
-    let rpc = Client::new(url, Auth::UserPass(user, pass))?;
+    let rpc = Client::new(&url, Auth::UserPass(user, pass))?;
     let hash = rpc.get_best_block_hash()?;
     println!("best block hash: {}", hash);
     let block = rpc.get_block(&hash)?;
